@@ -38,7 +38,7 @@ export default function test() {
           <div className="col-md-4 text-left" style={{marginTop:"20px", padding:"50px 50px"}}>
 						<div style={{padding:"20px 20px", background:"#F8F8F8", borderRadius: "10px", marginBottom:"10px"}}>
 							<AtomText value="Billing Info" weight="bold" size="15px"/>
-							<div style={{marginBottom:"70px"}}>
+							<div style={{height:"240px"}}>
 							<MoleculeBillingProduct product="Lorevial #A1294" price="$50.00" quantity=" x 1" size="12px"/>
 							<MoleculeBillingProduct product="Lorevial #A1294" price="$140.00" quantity=" x 10" size="12px"/>
 							<MoleculeBillingProduct product="Lorevial #A1294" price="$350.00" quantity=" x 5" size="12px"/>

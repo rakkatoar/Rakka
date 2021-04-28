@@ -11,7 +11,7 @@ export default function test() {
 				<div className="row container mt-5">
 					<div className="col-md-6" style={{ padding: "0 50px", marginBottom: "30px" }}>
 						<div style={{ padding: "10px 0 30px 0", background: "#FFFFFF", border: "1px solid #DEDEDE", boxSizing: "border-box", boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)", borderRadius: "10px" }}>
-							<img style={{ margin: "auto", display: "block" }} src="/products/product_4.jpg" />
+							<img style={{ margin: "auto", display: "block", width:"100%", maxWidth:"200px", height:"100%", maxHeight:"200px"}} src="/products/product_4.jpg" />
 						</div>
 						<div className="row mt-4">
               <MoleculeProductImage image="/products/product_4_1.png" />

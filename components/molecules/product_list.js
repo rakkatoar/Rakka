@@ -1,10 +1,18 @@
 import AtomText from "../atoms/text";
-
-export default function product_list({ image, name, category, price }) {
+import {useRouter} from "next/router";
+export default function product_list({ image, name, category, price, href, index, addCart, id }) {
+  const router = useRouter();
+ 
+  const handleClick = (e) => {
+    router.push({
+      pathname: href,
+      query: { id: e.target.id },
+    });
+  };
   return (
     <>
       <div className="p-4 templateProductList text-left">
-        <div className="mb-3" style={{width:"100%", background:"red", height:"156px", background: `url(${image})`, backgroundSize:"contain", backgroundRepeat: "no-repeat", backgroundPosition:"center"}}>
+        <div onClick={handleClick} id={index} className="mb-3" style={{width:"100%", background:"red", height:"156px", background: `url(${image})`, backgroundSize:"contain", backgroundRepeat: "no-repeat", backgroundPosition:"center"}}>
         {/*<img className="mb-4" src={image} />*/}
         </div>
         <AtomText value={name} size="14px" weight="bold" />
@@ -13,8 +21,8 @@ export default function product_list({ image, name, category, price }) {
           <div className="col-md-8">
             <AtomText value={price} size="18px" weight="bold" />
           </div>
-          <div className="col-md-4">
-            <img src="/beranda/icon_cart_black.png" />
+          <div onClick={addCart} className="col-md-4">
+            <img id={id} name={name} src="/beranda/icon_cart_black.png" />
           </div>
         </div>
       </div>
