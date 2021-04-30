@@ -26,7 +26,7 @@ export default function test() {
       </Toast>
       <center>
         <div className="row container mt-5">
-          <div className="col text-left">
+          <div className="col-md-6 text-left">
             <AtomText value="Peduli Digital Market" size="36px" weight="bold" />
             <AtomText value="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged" size="14px" />
             <div className="row mt-5">
@@ -38,11 +38,11 @@ export default function test() {
               </div>
             </div>
           </div>
-          <div className="col">
-            <img src="/beranda/banner.svg" />
+          <div className="col-md-6">
+            <img style={{width:"100%"}} src="/beranda/banner.svg" />
           </div>
         </div>
-        <div className="mt-5 pt-5" style={{ width: "100%", height: "512px", background: "#F9F9F9" }}>
+        <div className="mt-5 pt-5 pb-5" style={{ width: "100%", background: "#F9F9F9" }}>
           <center>
             <div className="row container">
               <div className="col-12 text-left">
@@ -51,8 +51,8 @@ export default function test() {
               {products.map((product, index) => {
                 return(
                   <>
-                    <div className="col">
-                      <MoleculeProductList addCart={handleAddCart} id={product.id} name={product.name} image={product.images[0]} name={product.name} category="Forever Shoes" price={product.price} index={index} href="/product/[id]"/>
+                    <div className="col-md-3 mb-4">
+                      <MoleculeProductList addCart={handleAddCart} id={product.id} name={product.name} image={product.images[0]} name={product.name} category={product.category} price={product.price} index={index} href="/product/[id]"/>
                     </div>
                   </>
                 )
