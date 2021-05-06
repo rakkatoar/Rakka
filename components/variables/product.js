@@ -1,5 +1,5 @@
-import { useState } from "react";
-export const list_product = [
+import {useState} from "react";
+export const list_product = () => [
 	{
 		id: 1,
 		name: "Lavonte #A1294",

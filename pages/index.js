@@ -9,7 +9,7 @@ import {Toast} from "react-bootstrap";
 import {useState} from "react";
 
 export default function test() {
-  const products = list_product;
+  const products = list_product();
   const [show, setShow] = useState(false);
   const [showName, setShowName] = useState("");
   const router = useRouter();

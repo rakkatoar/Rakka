@@ -8,7 +8,8 @@ import {useRouter} from "next/router";
 
 export default function detail() {
 	const router = useRouter();
-	const product = list_product[router.query.id];
+	const products = list_product();
+	const product = products[router.query.id];
 	return (
 		<>
 			<OrganismNav />
