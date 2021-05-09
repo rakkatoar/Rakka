@@ -7,7 +7,7 @@ import {users} from "../components/variables/user";
 import { useState } from "react";
 import {useRouter} from "next/router";
 
-export default function test() {
+export default function signUp() {
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [password1, setPassword1] = useState("");

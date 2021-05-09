@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Toast} from "react-bootstrap";
 import {useState} from "react";
 
-export default function test() {
+export default function index() {
   const products = list_product();
   const [show, setShow] = useState(false);
   const [showName, setShowName] = useState("");
@@ -52,7 +52,7 @@ export default function test() {
                 return(
                   <>
                     <div className="col-md-3 mb-4">
-                      <MoleculeProductList addCart={handleAddCart} id={product.id} name={product.name} image={product.images[0]} name={product.name} category={product.category} price={product.price} index={index} href="/product/[id]"/>
+                      <MoleculeProductList key={index} addCart={handleAddCart} id={product.id} name={product.name} image={product.images[0]} name={product.name} category={product.category} price={product.price} index={index} href="/product/[id]"/>
                     </div>
                   </>
                 )

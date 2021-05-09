@@ -3,7 +3,7 @@ import AtomButton from "../components/atoms/button_with_image";
 import OrganismNav from "../components/organisms/nav";
 import MoleculeProductImage from "../components/molecules/product_image";
 import 'bootstrap/dist/css/bootstrap.min.css';
-export default function test() {
+export default function detailProduct() {
 	return (
 		<>
 			<OrganismNav />

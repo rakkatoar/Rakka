@@ -6,7 +6,7 @@ import MoleculeBillingProduct from "../components/molecules/billing_product";
 import MoleculeBillingTotalPrice from "../components/molecules/billing_total_price";
 import OrganismNav from "../components/organisms/nav";
 import 'bootstrap/dist/css/bootstrap.min.css';
-export default function test() {
+export default function billing() {
   return (
     <>
 			<OrganismNav />
