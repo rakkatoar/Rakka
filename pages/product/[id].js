@@ -10,6 +10,7 @@ export default function detail() {
 	const router = useRouter();
 	const products = list_product();
 	const product = products[router.query.id];
+	console.log(product);
 	return (
 		<>
 			<OrganismNav />

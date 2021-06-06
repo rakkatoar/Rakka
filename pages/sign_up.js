@@ -1,9 +1,10 @@
 import AtomText from "../components/atoms/text";
 import AtomButton from "../components/atoms/button";
 import MoleculeInput from "../components/molecules/input";
+import { fetch_data } from "../components/variables/api";
 import Link from "next/link";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {users} from "../components/variables/user";
+// import {users} from "../components/variables/user";
 import { useState } from "react";
 import {useRouter} from "next/router";
 
@@ -23,27 +24,47 @@ export default function signUp() {
   };
 
   const handleSignup = () => {
+
+    let json = {
+      "action":"save",
+      "table":"tx_hdr_user",
+      "data":[
+          {
+              "user_name":username,
+              "user_password":password1
+          }
+      ]
+    };
+      
     if(password1 == password2){
-      let checkusername = users.filter(user => (user.username == username && user.password == password1));
-      console.log(checkusername.length);
-      if(checkusername.length == 0){
-        alert("Signup Success");
-        let newUser = {
-          username:username,
-          password:password1
+      fetch_data("POST", "http://localhost/api/store", json).then(function (result){
+        if(result.success){
+          router.push("/signin");
+          alert(result.data);
+        } else {
+          alert(reslut.data);
         }
-        users.push(newUser);
-        console.log(users);
-        router.push("/sign_in");
-      } else if (username.length == 0) {
-        alert("Username Empty");
-      } else if (checkusername.length > 0 ){
-        alert("User already registered.")
-      }
-    } else {
-      alert("Password is not match");
-    }
-  };
+      });
+      // let checkusername = users.filter(user => (user.username == username && user.password == password1));
+      // console.log(checkusername.length);
+    //   if(checkusername.length == 0){
+    //     alert("Signup Success");
+    //     let newUser = {
+    //       username:username,
+    //       password:password1
+    //     }
+    //     users.push(newUser);
+    //     console.log(users);
+    //     router.push("/sign_in");
+    //   } else if (username.length == 0) {
+    //     alert("Username Empty");
+    //   } else if (checkusername.length > 0 ){
+    //     alert("User already registered.")
+    //   }
+  } else {
+    alert("Password is not match");
+  }
+};
   return (
     <>
       <center>

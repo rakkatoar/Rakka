@@ -2,6 +2,8 @@ import AtomText from "../components/atoms/text";
 import AtomButton from "../components/atoms/button";
 import MoleculeInput from "../components/molecules/input";
 import MoleculeCheckbox from "../components/molecules/checkbox";
+import { fetch_data } from "../components/variables/api";
+
 import Link from "next/link";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {users} from "../components/variables/user";
@@ -20,17 +22,31 @@ export default function signIn() {
   };
 
   const handleLogin = () => {
-    let check = users.filter(user => (user.username == username && user.password == password));
-
-    if(check.length){
-      alert("Login Success");
-      router.push("/billing");
-    } else if (username.length == 0) {
-      alert("Username Empty");
-    } else {
-      alert("Username/password wrong");
+    let json = {
+      "action":"login",
+      "table":"tx_hdr_user",
+      "data":
+        {
+            "user_name":username,
+            "user_password":password
+        }
     }
-  };
+    fetch_data("POST", "http://localhost/api/auth", json).then(function (
+      result
+      ){
+      if(result.success){
+        alert("Login Success");
+        router.push("/admin/product");
+        // localStorage.setItem("user_name", JSON.stringify(result.username));
+        localStorage.setItem("user_id", JSON.stringify(result.data));
+      } else if (username.length == 0) {
+        alert("Username Empty");
+      } else {
+        alert(result.message);
+      }
+
+    }
+    )};
   return (
     <>
       <center>

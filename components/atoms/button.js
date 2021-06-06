@@ -1,9 +1,9 @@
-export default function test({ icon, value, color, height, fontSize, background, border, radius, padding, position, bottom, marginTop, marginBottom, width, weight, topIcon, onClick }) {
+export default function test({ icon, value, color, height, fontSize, background, border, radius, padding, position, bottom, right, marginTop, marginBottom, width, weight, topIcon, onClick }) {
   return (
     
   <button
   onClick={onClick} style={{ width: width ? width : "200px",
-  height: height ? height : "43px", color: color, fontWeight:weight, fontSize: fontSize, background: background, border: border, borderRadius: radius, padding: padding, position: position, bottom: bottom, marginTop: marginTop, marginBottom: marginBottom}}>
+  height: height ? height : "43px", color: color, fontWeight:weight, fontSize: fontSize, background: background, border: border, borderRadius: radius, padding: padding, position: position, bottom: bottom, right:right,marginTop: marginTop, marginBottom: marginBottom}}>
     {icon ? (
         <>
           <div className="row">

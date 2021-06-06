@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "cors": "^2.8.5",
     "next": "10.x",
     "react": "17.x",
     "react-bootstrap": "^1.5.2",
